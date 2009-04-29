@@ -1,0 +1,42 @@
+# status
+
+finished.  passes tests.
+
+
+# intro
+
+this is a DES library.  it is written in portable c, it does not
+need to know if it runs on a little or big endian machine.  it is
+easy to understand as it directly uses the tables from the DES
+specification (only the sboxes have a different layout, generated
+by the included sbox.py).  it is not optimized.  it does have tests,
+which it passes.  the code is in the public domain for easy inclusion
+in external software.
+
+
+# install
+
+this is just a library.  "make" will compile it (libdes.a).  "make
+run" will run the test suite.
+
+
+# latest version
+
+get it from http://www.ueber.net/code/r/des
+
+
+# licence & author
+
+all files are in the public domain.  this code has been written by
+mechiel lukkien, reachable at mechiel@ueber.net or mechiel@xs4all.nl.
+
+
+# caveats
+
+des.h uses the types "uchar" and "uvlong".  if your system does not
+define those, you can define them yourself (before inclusion of
+des.h).  for example:
+
+	typedef unsigned char uchar;
+	typedef unsigned long long uvlong;
+	#include "des.h"
